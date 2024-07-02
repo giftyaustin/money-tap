@@ -1,0 +1,15 @@
+.DrawerModal{
+    animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+    from{
+        transform: translateY(700px);
+    }
+    95%{
+        transform: translateY(-1rem);
+    }
+    to{
+        transform: translateY(0);
+    }
+}

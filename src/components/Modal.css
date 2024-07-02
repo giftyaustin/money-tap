@@ -1,0 +1,33 @@
+
+.CustomModal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem ;
+    outline: none;
+    animation: modalDrop 0.5s cubic-bezier(.34,-0.42,0,1.37) 0s 1;
+}
+
+.Modal{
+    animation: modalDrop 0.3s cubic-bezier(.34,-0.42,0,1.12) 0s 1;
+}
+
+@keyframes modalDrop {
+    0%{
+        opacity: 0;
+        transform: translateY(-1000px) ;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0) ;
+    }
+    
+}
+.closeIcon{
+    cursor: pointer;
+    position: absolute;
+}
