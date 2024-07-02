@@ -25,7 +25,7 @@ const Click = () => {
 
       {/* Clicking happens here */}
       <div className="flex justify-center w-full">
-        <div className="w-fit border" onClick={handleClick}>
+        <div className="w-fit border" onTouchEnd={handleClick}>
           <img src="/assets/tap-globe.png" alt="" className="w-96 shadow-2xl" />
         </div>
       </div>
