@@ -1,7 +1,18 @@
 
 
 export const getServerHost = () => {
-  return "http://localhost:4321";
+  if(import.meta.env.VITE_ENV==="LOCAL") {
+    return "http://10.20.0.144:7002";
+  }
+  else
+  return "https://telerest.paycio.com";
+};
+export const getSocketServerHost = () => {
+  if(import.meta.env.VITE_ENV==="LOCAL") {
+    return "http://10.20.0.144:7000";
+  }
+  else
+  return "https://telesocket.paycio.com";
 };
 
 export type LinkString = `/${string}`;

@@ -1,6 +1,6 @@
 import { useFetch } from "@/hooks/useFetch";
+import { UserInfo } from "@/lib/ResponseTypes";
 import { cn } from "@/lib/utils";
-import { UserInfo } from "@/pages/claim-airdrop/ClaimAirdrop";
 import WebApp from "@twa-dev/sdk";
 import React, { useEffect } from "react";
 import toast from "react-hot-toast";
@@ -58,10 +58,9 @@ const ExchangeNav = () => {
       {/* Exchange */}
       <button
         onClick={() => {
-          if(userInfo?.is_paycio_user){
+          if (userInfo?.is_paycio_user) {
             router("/referrals");
-          }
-          else{
+          } else {
             toast("You must be a Paycio user to use Referrals");
           }
         }}

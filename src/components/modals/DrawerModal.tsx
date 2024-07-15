@@ -9,6 +9,7 @@ interface Props {
   children: React.ReactNode;
   dialogClassName?: string;
   showCloseBtn?: boolean;
+  modalWrapperClassName?: string;
 }
 const DrawerModal = ({
   open,
@@ -16,14 +17,10 @@ const DrawerModal = ({
   children,
   dialogClassName,
   showCloseBtn = true,
+  ...props
 }: Props) => {
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
-
-  // useEffect(() => {
-  //   if (open) dialogRef.current?.showModal();
-  //   else dialogRef.current?.close();
-  // }, [open]);
   const handleOutsideClick = (e: MouseEvent) => {
     e.stopPropagation();
     if (e.target === dialogRef.current) setOpen(false);
@@ -47,12 +44,12 @@ const DrawerModal = ({
     >
       <div
         ref={contentRef}
-        className={cn(" transition-all translate-y-4 bg-black-l fixed main-width h-[45vh] bottom-0 flex justify-center rounded-t-2xl",
+        className={cn("transition-all shadow-top-lg  translate-y-4 absolute w-full bg-[#4233FB] main-width min-h-[45vh] bottom-0 flex justify-center rounded-t-2xl",props.modalWrapperClassName,
         {
           "DrawerModal": open
         })}
       >
-        {showCloseBtn && (
+        {/* {showCloseBtn && (
           <button
             className={`absolute top-4 right-4 p-1.5 bg-black-2l rounded-full`}
             onClick={() => {
@@ -61,7 +58,7 @@ const DrawerModal = ({
           >
             <CloseIcon/>
           </button>
-        )}
+        )} */}
         {children}
       </div>
     </div>

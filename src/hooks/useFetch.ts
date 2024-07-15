@@ -26,10 +26,11 @@ export const useFetch = <T>(options: Options) => {
     isLoading,
     error,
     isError,
+    refetch
   } = useQuery({
     queryKey: [options.serverPath],
     queryFn: fetchData,
-    staleTime: options.staleTime || 1000 * 60 * 60 * 24,
+    staleTime: options.staleTime || 0,
   });
 
   //   useEffect(() => {
@@ -43,12 +44,14 @@ export const useFetch = <T>(options: Options) => {
     data: AppResponse<T> | undefined;
     error: Error | null;
     isError: boolean;
+    refetch: () => void;
   };
   const returnObject: ReturnObject = {
     isLoading,
     data: apiData,
     error,
     isError,
+    refetch,
   };
 
   return returnObject;

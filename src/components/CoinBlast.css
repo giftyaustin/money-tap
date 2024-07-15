@@ -1,0 +1,28 @@
+/* .coin-blast-c{
+  perspective: 1000px;
+}
+
+.coin{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+    background-color: rgb(90, 90, 13);
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    animation: coin-blast 1s ease-out forwards;
+    transition: all 0.5s ease-out;
+  }
+  
+  @keyframes coin-blast {
+    from {
+      opacity: 1;
+      top: 100%;      
+    }
+    to {
+      opacity: 0;
+      transform: scale(0) translate(0%, 0%, 0px);
+    }
+  } */
